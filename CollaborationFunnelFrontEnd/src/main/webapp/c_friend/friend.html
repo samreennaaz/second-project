@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" ng-controller="FriendController as ctr"> 
+<input type="submit" ng-click="ctr.getMyFriend()" class="btn btn-primary" value="get Friend"/>  
+<div ng-repeat="friend in ctr.friend | filter: sear_text">
+<div class="container" ng-controller="UserController as ctrl">
+<div ng-hide="currentUser.userId !== friend.friendId">
+<p>friend Id: {{friend.userId}} &nbsp;&nbsp;&nbsp;Status: {{friend.status}}
+<!-- <input type="submit" ng-click="ctr.unFriend(friend.userId)" class="btn btn-warning" value="unfriend"/> -->
+<a href="#/chat"><input type="submit" class="btn btn-warning" value="Send Message"/></a>
+</p></div>
+</div> 
+</div>
+</div>
+</body>
+</html>

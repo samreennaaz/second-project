@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" ng-controller="FriendController as ctrl">
+<div class="form-group has-feedback"></div>
+<!-- Search for friend
+<p><input type="text" ng-model="sear_text"></p> -->
+<input type="submit" ng-click="ctrl.getMyFriendRequests()" class="btn btn-primary" value="Friend request"/>
+<div ng-repeat="friend in ctrl.friend | filter: sear_text">
+<div ng-hide="currentUser.userId !== friend.friendId">
+<p>UserId: {{friend.userId}}&nbsp;&nbsp;&nbsp;Status: {{friend.status}}
+<input type="submit" ng-click="ctrl.acceptFriendRequest(friend.userId)" class="btn btn-warning" value="Accept Friend request"/>
+<input type="submit" ng-click="ctrl.rejectFriendRequest(friend.userId)" class="btn btn-danger" value="Reject Friend request"/>
+</fieldset>
+</div>
+</div> 
+</body>
+</html>

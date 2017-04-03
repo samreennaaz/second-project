@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div ng-controller="BlogController as blogCtrl" class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            	<th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in blogCtrl.blogs">
+            	<td><span ng-bind="row.blogId"></span></td>
+	        	<td><span ng-bind="row.title"></span></td>
+	         	<td><span ng-bind="row.description"></span></td>
+                <td><input type="submit" ng-click="blogCtrl.getSelectedBlog(row.blogId)" class="btn btn-primary" value="View Blog"/></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
